@@ -43,4 +43,19 @@ hideFooterAli();
 setInterval(hideFooterAli,500);
 setTimeout(hideFooterAli,1000);
 setTimeout(hideFooterAli,3000);
-
+<script>
+function fixSuggest(){
+var seen={};
+document.querySelectorAll('li').forEach(function(el){
+var t=el.textContent.trim();
+if(t.length>10 && t.indexOf('Varnsdorf')!==-1){
+if(seen[t]){ el.style.display='none'; } else { seen[t]=true; }
+}
+});
+}
+document.addEventListener('click',function(e){
+var sug=e.target.closest('li');
+if(sug){ setTimeout(function(){ fixSuggest(); },100); }
+});
+setInterval(fixSuggest,500);
+</script>
