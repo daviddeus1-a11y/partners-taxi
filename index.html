@@ -46,7 +46,7 @@ setTimeout(hideFooterAli,3000);
 <script>
 function fixSuggest(){
 var seen={};
-document.querySelectorAll('li').forEach(function(el){
+document.querySelectorAll('li,div').forEach(function(el){
 var t=el.textContent.trim();
 if(t.length>10 && t.indexOf('Varnsdorf')!==-1){
 if(seen[t]){ el.style.display='none'; } else { seen[t]=true; }
