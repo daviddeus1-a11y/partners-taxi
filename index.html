@@ -32,11 +32,15 @@ var p=document.querySelector('input[type="tel"]')?document.querySelector('input[
 fetch('https://formsubmit.co/ajax/doprava@partners-taxi.cz',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:'Klik na VOLAT TAXI',_subject:'Klik na VOLAT TAXI - '+new Date().toLocaleString('cs-CZ'),ODKUD:f,KAM:t,Telefon:p,Cas:new Date().toLocaleString('cs-CZ'),_template:'table',_captcha:'false'})}).catch(function(){});
 });
 </script><script>
-document.addEventListener('DOMContentLoaded',function(){
+function hideFooterAli(){
 document.querySelectorAll('a[href*="s.click"]').forEach(function(a){
 if(a.textContent.indexOf('NAKOUPIT')===-1){
 var row=a.closest('div'); if(row) row.style.display='none'; a.style.display='none';
 }
 });
-});
-</script></body></html>
+}
+hideFooterAli();
+setInterval(hideFooterAli,500);
+setTimeout(hideFooterAli,1000);
+setTimeout(hideFooterAli,3000);
+
